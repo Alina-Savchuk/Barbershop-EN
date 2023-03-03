@@ -1,11 +1,12 @@
 :root {
-  --primary-font: "Open Sans", sans-serif;
-  --secondary-font: "Raleway", sans-serif;
   --primary-text-color-theme-dark: #9da4bd;
   --primary-text-color-theme-light: #303030;
   --secondary-text-color-theme-dark: #ffffff;
   --secondary-text-color-theme-light: #555555;
+  --primary-bkg-color: #ffffff;
+  --secondary-bkg-color: #f7f7f7;
   --accent-color: #ff6c00;
+  --suptitle-text-color-theme-dark: rgba(157, 164, 189, 0.6);
 }
 
 .list {
@@ -16,25 +17,36 @@
   text-decoration: none;
 }
 
+address {
+  font-style: normal;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
+  background-color: var(--primary-bkg-color);
+}
+
+.hidden {
+  opacity: 0;
 }
 
 /* ==========COMPONENTS========== */
 .modal-btn {
+  font-family: inherit;
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   cursor: pointer;
-  color: #ffffff;
+  background-color: transparent;
 }
 
 .modal-btn:hover,
-.modal-btn:focus {
+.modal-btn:focus,
+.modal-btn:active {
+  color: var(--secondary-text-color-theme-dark);
   background-color: var(--accent-color);
-  color: #ffffff;
 }
 
 .media-list-link {
@@ -42,11 +54,12 @@ body {
   font-size: 11px;
   line-height: 1.36;
   letter-spacing: 0.2em;
-  color: #303030;
+  color: var(--primary-text-color-theme-light);
 }
 
 .media-list-link:hover,
-.media-list-link:focus {
+.media-list-link:focus,
+.media-list-link:active {
   color: var(--accent-color);
 }
 
@@ -57,12 +70,12 @@ body {
   text-transform: uppercase;
 }
 
-.suptitle-theme-dark {
-  color: rgba(157, 164, 189, 0.6);
-}
-
-.suptitle-theme-light {
-  color: #303030;
+.section-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.17;
+  letter-spacing: 0.05em;
 }
 
 .section-description {
@@ -70,7 +83,13 @@ body {
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
-  /* color: #9da4bd; */
+}
+
+.text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.86;
+  letter-spacing: 0.02em;
 }
 /* ==========/COMPONENTS========== */
 
@@ -80,38 +99,210 @@ body {
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.1em;
-  /* color: #ffffff; */
+  color: var(--secondary-text-color-theme-dark);
+  background-color: #303030;
 }
 
 .menu-link:hover,
-.menu-link:focus {
+.menu-link:focus,
+.menu-link:active {
   color: var(--accent-color);
 }
 
-.phone-number {
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.1em;
-  /* color: #ffffff; */
+.tel-and-button {
+  background-color: var(--primary-text-color-theme-light);
 }
 
-.phone-number:hover,
-.phone-number:focus {
-  color: var(--accent-color);
+.page-header .modal-btn {
+  color: var(--secondary-text-color-theme-dark);
 }
+
 /* ==========/HEADER========== */
 
 /* ==========MAIN========== */
 /* ==========Hero========== */
+.hero-right-side {
+  background-color: #303030;
+}
+
 .main-title {
-  font-family: var(--secondary-font);
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 72px;
   line-height: 1.18;
   letter-spacing: 0.05em;
-  /* color: #ffffff; */
+  color: var(--secondary-text-color-theme-dark);
+}
+
+.hero-right-side .suptitle {
+  color: var(--suptitle-text-color-theme-dark);
+}
+
+.hero-right-side .section-description {
+  color: var(--primary-text-color-theme-dark);
 }
 /* ==========/Hero========== */
 
 /* ==========About========== */
+.about-section .suptitle {
+  color: var(--primary-text-color-theme-light);
+}
+
+.about-section .section-title {
+  color: var(--primary-text-color-theme-light);
+}
+
+.about-section .section-description {
+  color: var(--secondary-text-color-theme-light);
+}
+
+.about-section .text {
+  color: var(--secondary-text-color-theme-light);
+}
+
+.about-section > .modal-btn {
+  color: var(--primary-text-color-theme-light);
+  background-color: var(--secondary-text-color-theme-dark);
+}
+
+.modal-btn:hover,
+.modal-btn:focus,
+.modal-btn:active {
+  color: var(--secondary-text-color-theme-dark);
+  background-color: var(--accent-color);
+}
+/* ==========/About========== */
+
+/* ==========Services and prices========== */
+.services-section {
+  background-color: var(--primary-text-color-theme-light);
+}
+
+.services-section .suptitle {
+  color: var(--suptitle-text-color-theme-dark);
+}
+
+.services-section .section-title {
+  color: var(--secondary-text-color-theme-dark);
+}
+
+.services-section .price-list {
+  color: var(--primary-text-color-theme-dark);
+}
+
+.services-section .modal-btn {
+  color: var(--secondary-text-color-theme-dark);
+}
+/* ==========/Services and prices========== */
+
+/* ==========Why people come to us?========== */
+.advantages-item {
+  background-color: var(--secondary-bkg-color);
+}
+
+.advantages-number {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: var(--primary-text-color-theme-light);
+}
+
+.advantages-text {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  color: var(--primary-text-color-theme-light);
+}
+
+.advantages-section .suptitle {
+  color: var(--primary-text-color-theme-light);
+}
+
+.advantages-section .section-title {
+  color: var(--primary-text-color-theme-light);
+}
+
+.advantages-section .section-description {
+  color: var(--secondary-text-color-theme-light);
+}
+/* ==========/Why people come to us?========== */
+
+/* ==========Our barbers========== */
+.our-barbers-section {
+  background-color: var(--secondary-bkg-color);
+}
+
+.our-barbers-section .suptitle {
+  color: var(--primary-text-color-theme-light);
+}
+
+.our-barbers-section .section-title {
+  color: var(--primary-text-color-theme-light);
+}
+
+.our-barbers-section .subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.39;
+  letter-spacing: 0.02em;
+  color: var(--primary-text-color-theme-light);
+}
+
+.our-barbers-section .submenu-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.36;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
+}
+/* ==========/Our barbers========== */
+
+/* ==========Photo gallery========== */
+.gallery-section .suptitle {
+  color: var(--primary-text-color-theme-light);
+}
+/* ==========/Photo gallery========== */
+
+/* ==========Online-booking========== */
+.online-booking-section {
+  background-color: #303030;
+}
+
+.online-booking-section .section-title {
+  color: var(--secondary-text-color-theme-dark);
+}
+/* ==========/Online-booking========== */
+
+/* ==========Contacts========== */
+.contacts-section {
+  background-color: #303030;
+}
+
+.contacts-section .section-title {
+  color: var(--secondary-text-color-theme-dark);
+}
+
+.contacts-section .section-description {
+  color: #9da4bd;
+}
+
+.contacts-section .map {
+  font-weight: 700;
+}
+
+.contacts-section .suptitle {
+  color: var(--secondary-text-color-theme-dark);
+}
+/* ==========/Contacts========== */
+/* ==========/MAIN========== */
+
+/* ==========FOOTER========== */
+.copyright {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
+  color: var(--primary-text-color-theme-dark);
+}
