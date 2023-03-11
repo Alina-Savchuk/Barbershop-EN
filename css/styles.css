@@ -9,6 +9,28 @@
   --suptitle-text-color-theme-dark: rgba(157, 164, 189, 0.6);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+}
+
 .list {
   list-style: none;
 }
@@ -21,24 +43,55 @@ address {
   font-style: normal;
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background-color: var(--primary-bkg-color);
 }
 
 .hidden {
-  opacity: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 /* ==========COMPONENTS========== */
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .modal-btn {
+  border: 1px solid var(--accent-color);
+  border-radius: 25px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 20px;
+  padding-left: 20px;
   font-family: inherit;
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  cursor: pointer;
   background-color: transparent;
 }
 
@@ -68,6 +121,7 @@ body {
   font-size: 11px;
   line-height: 1.36;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .section-title {
@@ -94,6 +148,34 @@ body {
 /* ==========/COMPONENTS========== */
 
 /* ==========HEADER========== */
+.page-header-container {
+  display: flex;
+  align-items: center;
+}
+
+.page-header {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.page-nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  margin-right: 131px;
+}
+
+.menu-item:not(:last-child) {
+  margin-right: 30px;
+}
+
 .menu-link {
   font-weight: 600;
   font-size: 12px;
@@ -111,9 +193,15 @@ body {
 
 .tel-and-button {
   background-color: var(--primary-text-color-theme-light);
+  margin-left: auto;
 }
 
-.page-header .modal-btn {
+.tel-and-button > .menu-link {
+  margin-right: 43px;
+}
+
+.tel-and-button > .modal-btn {
+  margin-right: 17px;
   color: var(--secondary-text-color-theme-dark);
 }
 
@@ -131,6 +219,7 @@ body {
   font-size: 72px;
   line-height: 1.18;
   letter-spacing: 0.05em;
+  margin-bottom: 20px;
   color: var(--secondary-text-color-theme-dark);
 }
 
@@ -144,19 +233,36 @@ body {
 /* ==========/Hero========== */
 
 /* ==========About========== */
+.about-section .container {
+  display: flex;
+  gap: 30px;
+}
+
+.our-services-img {
+  display: flex;
+  gap: 30px;
+}
+
+.about-section-content {
+  width: 470px;
+}
+
 .about-section .suptitle {
   color: var(--primary-text-color-theme-light);
 }
 
 .about-section .section-title {
+  margin-bottom: 20px;
   color: var(--primary-text-color-theme-light);
 }
 
 .about-section .section-description {
+  margin-bottom: 20px;
   color: var(--secondary-text-color-theme-light);
 }
 
 .about-section .text {
+  margin-bottom: 42px;
   color: var(--secondary-text-color-theme-light);
 }
 
@@ -183,7 +289,12 @@ body {
 }
 
 .services-section .section-title {
+  margin-bottom: 44px;
   color: var(--secondary-text-color-theme-dark);
+}
+
+.services-section-table {
+  display: flex;
 }
 
 .services-section .price-list {
@@ -196,7 +307,19 @@ body {
 /* ==========/Services and prices========== */
 
 /* ==========Why people come to us?========== */
+
+.advantages-section .container {
+  display: flex;
+}
+
 .advantages-item {
+  width: 170px;
+  height: 133px;
+  padding-top: 20px;
+  padding-left: 24px;
+  padding-bottom: 20px;
+  padding-right: 24px;
+  text-align: center;
   background-color: var(--secondary-bkg-color);
 }
 
@@ -221,6 +344,7 @@ body {
 }
 
 .advantages-section .section-title {
+  margin-bottom: 20px;
   color: var(--primary-text-color-theme-light);
 }
 
@@ -230,8 +354,40 @@ body {
 /* ==========/Why people come to us?========== */
 
 /* ==========Our barbers========== */
+.barbers-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Відступи замість "gap" */
+/* .barbers-list-item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
+.barbers-list-item:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+} */
+
+.barbers-list-item {
+  flex-basis: calc((100% - 2 * 30px) / 3);
+}
+
+.barbers-list-content {
+  padding-top: 30px;
+}
+
 .our-barbers-section {
   background-color: var(--secondary-bkg-color);
+}
+
+.social-networks-list {
+  display: flex;
+  justify-content: center;
+}
+
+.social-networks-item:not(:last-child) {
+  margin-right: 10px;
 }
 
 .our-barbers-section .suptitle {
@@ -239,6 +395,7 @@ body {
 }
 
 .our-barbers-section .section-title {
+  margin-bottom: 44px;
   color: var(--primary-text-color-theme-light);
 }
 
@@ -247,6 +404,8 @@ body {
   font-size: 18px;
   line-height: 1.39;
   letter-spacing: 0.02em;
+  text-align: center;
+  margin-bottom: 8px;
   color: var(--primary-text-color-theme-light);
 }
 
@@ -255,6 +414,8 @@ body {
   font-size: 14px;
   line-height: 1.36;
   letter-spacing: 0.02em;
+  text-align: center;
+  margin-bottom: 30px;
   color: var(--accent-color);
 }
 /* ==========/Our barbers========== */
@@ -262,28 +423,53 @@ body {
 /* ==========Photo gallery========== */
 .gallery-section .suptitle {
   color: var(--primary-text-color-theme-light);
+  margin-bottom: 44px;
+}
+
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 /* ==========/Photo gallery========== */
 
-/* ==========Online-booking========== */
-.online-booking-section {
+/* ==========Online-booking and Contacts========== */
+.online-booking {
   background-color: #303030;
+}
+
+.online-booking {
+  padding-top: 130px;
+}
+
+.online-booking .container {
+  display: flex;
+}
+
+.online-booking-section {
+  padding-left: 219px;
 }
 
 .online-booking-section .section-title {
   color: var(--secondary-text-color-theme-dark);
 }
-/* ==========/Online-booking========== */
 
-/* ==========Contacts========== */
 .contacts-section {
-  background-color: #303030;
+  margin-left: 130px;
 }
 
 .contacts-section .section-title {
+  margin-bottom: 40px;
   color: var(--secondary-text-color-theme-dark);
 }
 
+.contacts-list-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.contacts-list {
+  margin-bottom: 70px;
+}
 .contacts-section .section-description {
   color: #9da4bd;
 }
@@ -295,10 +481,24 @@ body {
 .contacts-section .suptitle {
   color: var(--secondary-text-color-theme-dark);
 }
-/* ==========/Contacts========== */
+/* ==========/Online-booking and Contacts========== */
 /* ==========/MAIN========== */
 
 /* ==========FOOTER========== */
+
+.footer-section {
+  height: 127px;
+  background-color: var(--secondary-bkg-color);
+}
+
+.footer-section .container {
+  display: flex;
+}
+
+.media-list {
+  display: flex;
+}
+
 .copyright {
   font-weight: 600;
   font-size: 11px;
