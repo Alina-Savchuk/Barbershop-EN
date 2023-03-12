@@ -52,6 +52,8 @@ body {
   background-color: var(--primary-bkg-color);
 }
 
+/* ==========COMPONENTS========== */
+
 .hidden {
   position: absolute;
   width: 1px;
@@ -65,7 +67,6 @@ body {
   overflow: hidden;
 }
 
-/* ==========COMPONENTS========== */
 .section {
   padding-top: 120px;
   padding-bottom: 120px;
